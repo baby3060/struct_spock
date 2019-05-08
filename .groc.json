@@ -1,0 +1,10 @@
+{
+    "glob": [
+      "./src/main/java/struct/*.java",
+      "./src/main/java/struct/**/**/*.java"
+    ],
+    "except": [
+    ],
+    "github": false,
+    "out": "./docs/groc"
+  }
