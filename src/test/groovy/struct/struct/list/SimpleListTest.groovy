@@ -57,4 +57,19 @@ class SimpleListTest extends Specification {
         3 | 3
     }
 
+    def "단일 연결 리스트 Exception 테스트"() {
+        given : SimpleLinkedList list = new SimpleLinkedList()
+
+        when : Node overNode = list.getNode(3);
+
+        then : thrown RuntimeException
+
+        Node newNode = new Node(1)   
+        list.insertNode(newNode)
+
+        // 0 이하의 Node는 Head Node 
+        when : Node minusNode = list.getNode(-1);
+
+        then : minusNode.getNext().equals(newNode);
+    }
 }
