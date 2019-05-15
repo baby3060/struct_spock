@@ -72,4 +72,30 @@ class SimpleListTest extends Specification {
 
         then : minusNode.getNext().equals(newNode);
     }
+
+    def "삭제 테스트"() {
+        given : SimpleLinkedList list = new SimpleLinkedList()
+
+        Node newNode = new Node(1)
+        Node newNode2 = new Node(2)
+        Node newNode3 = new Node(3)
+        Node newNode4 = new Node(4)
+        Node newNode5 = new Node(5)
+
+        list.insertNode(newNode)
+        list.insertNode(newNode2)
+        list.insertNode(newNode3)
+        list.insertNode(newNode4)
+        list.insertNode(newNode5)
+
+        when : def count = list.count()
+
+        then : (count == 5)
+
+        when : def getNode = list.getNode(3)
+
+        then : getNode.getValue() == 3
+
+        
+    }
 }

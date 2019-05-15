@@ -4,6 +4,9 @@
 package struct;
 
 public class App {
+    /*
+    * 처음 만들어줌
+    */
     public String getGreeting() {
         return "Hello world.";
     }
